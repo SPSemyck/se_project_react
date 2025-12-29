@@ -10,11 +10,7 @@ function Header() {
       <button className="header__add-cloth-btn">+ Add clothes</button>
       <div className="header__user">
         <p className="header__user_name">NAME</p>
-        <img
-          src={userAvatar}
-          alt="User Avatar"
-          className="header__user_avatar"
-        />
+        <img src={userAvatar} alt="USER" className="header__user_avatar" />
       </div>
     </Header>
   );
