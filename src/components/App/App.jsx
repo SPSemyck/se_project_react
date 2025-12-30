@@ -5,7 +5,7 @@ import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 
 function App() {
-  const [weatherData, setWeatherData] = useState({ type: "cold" });
+  const [weatherData, setWeatherData] = useState({ type: "hot" });
 
   return (
     <div className="app">
