@@ -1,3 +1,4 @@
+import "./WeatherCard.css";
 import weatherBackdrop from "../../assets/sunny-day.png";
 
 function WeatherCard() {
