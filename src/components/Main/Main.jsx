@@ -1,5 +1,7 @@
 import "./Main.css";
 import WeatherCard from "../WeatherCard/WeatherCard";
+import ItemCard from "../ItemCard/ItemCard.jsx";
+import { defaultClothingItems } from "../../utils/constants.js";
 
 function Main() {
   return (
@@ -7,7 +9,11 @@ function Main() {
       <WeatherCard />
       <section className="cards">
         <p className="cards__text">Today is TEMP / You may want to wear:</p>
-        {/* TODO - add cards */}
+        <ul className="cards__list">
+          {defaultClothingItems.map((item) => {
+            return <ItemCard key={item._id} item={item} />;
+          })}
+        </ul>
       </section>
     </main>
   );
