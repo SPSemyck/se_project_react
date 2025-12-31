@@ -2,12 +2,16 @@ import "./Header.css";
 import appLogo from "../../assets/logo.svg";
 import userAvatar from "../../assets/avatar-image.png";
 
-function Header() {
+function Header({ handleAddClick }) {
   return (
     <header className="header">
       <img src={appLogo} alt="App Logo" className="header__logo" />
       <p className="header__date-and-location">DATE, LOCATION</p>
-      <button type="button" className="header__add-cloth-btn">
+      <button
+        onClick={handleAddClick}
+        type="button"
+        className="header__add-cloth-btn"
+      >
         + Add clothes
       </button>
       <div className="header__user">
