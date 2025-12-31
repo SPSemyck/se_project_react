@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer__copyright {
+  color: #000000;
+}
+
+.footer__year {
+  color: #000000;
+}
