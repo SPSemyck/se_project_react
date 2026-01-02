@@ -5,10 +5,12 @@ import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
 import ModalWithForm from "../ModalWithForm/ModalWithForm.jsx";
+import ItemModal from "../ItemModal/ItemModal.jsx";
 
 function App() {
   const [weatherData, setWeatherData] = useState({ type: "hot" });
   const [activeModal, setActiveModal] = useState("");
+  const [selectedCard, setSelectCard] = useState({});
 
   const handleAddClick = () => {
     setActiveModal("add-garment");
@@ -16,6 +18,11 @@ function App() {
 
   const closeActiveModal = () => {
     setActiveModal("");
+  };
+
+  const handleCardClick = (card) => {
+    setActiveModal("preview");
+    setSelectCard(card);
   };
 
   return (
@@ -73,6 +80,11 @@ function App() {
           </fieldset>
         </label>
       </ModalWithForm>
+      <ItemModal
+        activeModal={activeModal}
+        card={selectedCard}
+        handleCloseClick={closeActiveModal}
+      />
     </div>
   );
 }
