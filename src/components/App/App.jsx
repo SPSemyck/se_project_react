@@ -29,7 +29,7 @@ function App() {
     <div className="app">
       <div className="app__content">
         <Header handleAddClick={handleAddClick} />
-        <Main weatherData={weatherData} />
+        <Main weatherData={weatherData} handleCardClick={handleCardClick} />
         <Footer />
       </div>
       <ModalWithForm
