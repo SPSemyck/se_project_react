@@ -1,10 +1,10 @@
 import "./WeatherCard.css";
 import weatherBackdrop from "../../assets/sunny-day.png";
 
-function WeatherCard() {
+function WeatherCard({ weatherData }) {
   return (
     <section className="weather-card">
-      <p className="weather-card__temp">TEMP</p>
+      <p className="weather-card__temp">{weatherData.temp.F} &deg; F</p>
       <img
         src={weatherBackdrop}
         alt="Current Weather"

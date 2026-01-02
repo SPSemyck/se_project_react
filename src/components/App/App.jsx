@@ -12,7 +12,7 @@ import { coordinates, APIkey } from "../../utils/constants.js";
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
-    temp: { F: 999, C: 999 },
+    temp: { F: 999 },
     city: "",
   });
   const [activeModal, setActiveModal] = useState("");
