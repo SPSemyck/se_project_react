@@ -3,6 +3,10 @@ import appLogo from "../../assets/logo.svg";
 import userAvatar from "../../assets/avatar-image.png";
 
 function Header({ handleAddClick }) {
+  const currentDate = new Date().toLocaleString("default", {
+    month: "long",
+    day: "numeric",
+  });
   return (
     <header className="header">
       <img src={appLogo} alt="App Logo" className="header__logo" />
