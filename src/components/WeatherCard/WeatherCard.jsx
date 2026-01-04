@@ -1,5 +1,5 @@
 import "./WeatherCard.css";
-import weatherBackdrop from "../../assets/sunny-day.png";
+import weatherBackdrop from "../../assets/day/day_clear.png";
 
 function WeatherCard({ weatherData }) {
   return (

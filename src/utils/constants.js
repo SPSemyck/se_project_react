@@ -1,3 +1,66 @@
+const weatherOptions = [
+  {
+    day: true,
+    condition: "clear",
+    url: new URL("../assets/day/day_clear.png", import.meta.url),
+  },
+  {
+    day: true,
+    condition: "cloudy",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: true,
+    condition: "fog",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: true,
+    condition: "rain",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: true,
+    condition: "snow",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: true,
+    condition: "thunder",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: false,
+    condition: "cloudy",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: false,
+    condition: "fog",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: false,
+    condition: "rain",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: false,
+    condition: "snow",
+    url: new URL("", import.meta.url),
+  },
+  {
+    day: false,
+    condition: "thunder",
+    url: new URL("", import.meta.url),
+  },
+];
+
 const defaultClothingItems = [
   {
     _id: 1,
