@@ -1,4 +1,5 @@
 import "./WeatherCard.css";
+import { weatherOptions } from "../../utils/constants";
 import weatherBackdrop from "../../assets/day/day_clear.png";
 
 function WeatherCard({ weatherData }) {

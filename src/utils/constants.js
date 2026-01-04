@@ -2,62 +2,62 @@ const weatherOptions = [
   {
     day: true,
     condition: "clear",
-    url: new URL("../assets/day/day_clear.png", import.meta.url),
+    url: new URL("../assets/day/day_clear.png", import.meta.url).href,
   },
   {
     day: true,
     condition: "cloudy",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/day/day_cloudy.png", import.meta.url).href,
   },
   {
     day: true,
     condition: "fog",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/day/day_fog.png", import.meta.url).href,
   },
   {
     day: true,
     condition: "rain",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/day/day_rain.png", import.meta.url).href,
   },
   {
     day: true,
     condition: "snow",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/day/day_snow.png", import.meta.url).href,
   },
   {
     day: true,
     condition: "thunder",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/day/day_thunder.png", import.meta.url).href,
   },
   {
     day: false,
     condition: "clear",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/night/night_clear.png", import.meta.url).href,
   },
   {
     day: false,
     condition: "cloudy",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/night/night_cloudy.png", import.meta.url).href,
   },
   {
     day: false,
     condition: "fog",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/night/night_fog.png", import.meta.url).href,
   },
   {
     day: false,
     condition: "rain",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/night/night_rain.png", import.meta.url).href,
   },
   {
     day: false,
     condition: "snow",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/night/night_snow.png", import.meta.url).href,
   },
   {
     day: false,
     condition: "thunder",
-    url: new URL("", import.meta.url),
+    url: new URL("../assets/night/night_thunder.png", import.meta.url).href,
   },
 ];
 
@@ -160,7 +160,7 @@ const defaultClothingItems = [
   },
 ];
 
-export { defaultClothingItems };
+export { defaultClothingItems, weatherOptions };
 export const coordinates = {
   latitude: 35.58983017041625,
   longitude: -87.09630489349367,
