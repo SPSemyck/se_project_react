@@ -95,5 +95,7 @@
   border-radius: 4px;
   color: #ffffff;
   background-color: #0000004d;
-  padding: 0;
+  padding: 8px 16px;
+  margin-top: 32px;
+  margin-right: auto;
 }
