@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Cabinet-Medium";
+  src: url(../../vendor/fonts/CabinetGrotesk-Medium.otf);
+}
+
 .card {
   width: 323px;
   position: relative;
@@ -6,8 +11,15 @@
 }
 
 .card__name {
+  font-family: "Cabinet-Medium", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  color: #00000099;
+  border-radius: 4px;
+  background-color: #ffffff;
   position: absolute;
   margin: 0;
+  padding: 2px 12px;
   top: 15px;
 }
 

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Cabinet-Regular";
+  src: url(../../vendor/fonts/CabinetGrotesk-Regular.otf);
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
@@ -5,9 +10,15 @@
 }
 
 .footer__copyright {
+  font-family: "Cabinet-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
   color: #000000;
 }
 
 .footer__year {
+  font-family: "Cabinet-Regular", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
   color: #000000;
 }

@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "Cabinet-Medium";
+  src: url(../../vendor/fonts/CabinetGrotesk-Medium.otf);
+}
+
+.modal__content_type_image {
+  border-radius: 16px;
+  padding: 0;
+}
+
+.modal__close-btn {
+}
+
+.modal__image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.modal__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 32px 32px;
+}
+
+.modal__caption {
+  font-family: "Cabinet-Medium", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.modal__weather {
+  font-family: "Cabinet-Medium", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 0;
+}

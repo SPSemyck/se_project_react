@@ -1,4 +1,5 @@
 import "./ItemModal.css";
+import xIcon from "../../assets/closing-x-icon_grey.svg";
 
 function ItemModal({ activeModal, card, handleCloseClick }) {
   return (
@@ -9,7 +10,7 @@ function ItemModal({ activeModal, card, handleCloseClick }) {
           type="button"
           className="modal__close-btn"
         >
-          Close
+          <img src={xIcon} alt="Closing button" />
         </button>
         <img src={card.link} alt={card.name} className="modal__image" />
         <div className="modal__footer">
