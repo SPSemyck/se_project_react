@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Cabinet-Medium";
+  src: url(./CabinetGrotesk-Medium.otf);
+}
+
+@font-face {
+  font-family: "Cabinet-Bold";
+  src: url(./CabinetGrotesk-Bold.otf);
+}
+
+@font-face {
+  font-family: "Cabinet-Regular";
+  src: url(./CabinetGrotesk-Regular.otf);
+}
+
+@font-face {
+  font-family: "Cabinet-Light";
+  src: url(./CabinetGrotesk-Light.otf);
+}
+
+@font-face {
+  font-family: "Cabinet-Thin";
+  src: url(./CabinetGrotesk-Thin.otf);
+}
