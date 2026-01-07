@@ -26,4 +26,6 @@
 .card__image {
   width: 100%;
   cursor: pointer;
+  border: solid 1px #0000004d;
+  border-radius: 20px;
 }

@@ -1,5 +1,5 @@
 import "./ItemModal.css";
-import xIcon from "../../assets/closing-x-icon_grey.svg";
+import xIcon from "../../assets/closing-x-icon_white.svg";
 
 function ItemModal({ activeModal, card, handleCloseClick }) {
   return (
