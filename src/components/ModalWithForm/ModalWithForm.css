@@ -97,3 +97,6 @@
   margin-top: 32px;
   margin-right: auto;
 }
+
+@media screen and (max-width: 425px) {
+}

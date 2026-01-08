@@ -24,3 +24,11 @@
   border: solid 1px #0000004d;
   border-radius: 20px;
 }
+
+@media screen and (max-width: 425px) {
+  .card {
+    flex-wrap: wrap;
+    max-width: 164px;
+    max-height: 164px;
+  }
+}

@@ -17,3 +17,6 @@
   line-height: 20px;
   color: #000000;
 }
+
+@media screen and (max-width: 425px) {
+}
