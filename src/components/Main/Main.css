@@ -1,11 +1,3 @@
-@font-face {
-  font-family: "Cabinet-Medium";
-  src: url(../../vendor/fonts/CabinetGrotesk-Medium.otf);
-}
-
-.cards {
-}
-
 .cards__text {
   font-family: "Cabinet-Medium", sans-serif;
   line-height: 24px;

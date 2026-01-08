@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Cabinet-Bold";
-  src: url(../../vendor/fonts/CabinetGrotesk-Bold.otf);
-}
-
 .weather-card {
   position: relative;
   display: flex;
