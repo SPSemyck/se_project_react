@@ -10,14 +10,18 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
   };
 
   const { values, handleChange } = useForm(defaultValues);
-  function handleSubmit(evt) {}
+
+  function handleSubmit(evt) {
+    evt.preventDefault();
+    onAddItem(values);
+  }
 
   return (
     <ModalWithForm
       title="New garment"
       buttonText="Add garment"
       handleCloseClick={handleCloseClick}
-      handleSubmit={onAddItem}
+      onSubmit={handleSubmit}
       isOpen={isOpen}
     >
       {

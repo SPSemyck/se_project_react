@@ -1,17 +1,23 @@
+// React hooks & Router
 import { useEffect, useState } from "react";
-
+import { Route, Routes } from "react-router-dom";
+// Styles
 import "./App.css";
+// Components
 import Header from "../Header/Header.jsx";
 import Main from "../Main/Main.jsx";
 import Footer from "../Footer/Footer.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
+import Profile from "../Profile/Profile.jsx";
+// Utils
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import {
   coordinates,
   apiKey,
   defaultClothingItems,
 } from "../../utils/constants.js";
+// Contexts
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 
 function App() {
@@ -44,7 +50,16 @@ function App() {
     setSelectCard(card);
   };
 
-  const onAddItem = (data) => {};
+  const onAddItem = (inputValues) => {
+    const newCardData = {
+      name: inputValues.name,
+      link: inputValues.link,
+      weather: inputValues.weatherType,
+    };
+
+    setClothingItems([...clothingItems, newCardData]);
+    closeActiveModal();
+  };
 
   useEffect(() => {
     getWeather(coordinates, apiKey)
@@ -64,16 +79,27 @@ function App() {
       <div className="app">
         <div className="app__content">
           <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-          <Main
-            weatherData={weatherData}
-            handleCardClick={handleCardClick}
-            clothingItems={clothingItems}
-          />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Main
+                  weatherData={weatherData}
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
+          </Routes>
+          <Routes>
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
           <Footer />
         </div>
         <AddItemModal
           isOpen={activeModal === "add-garment"}
           handleCloseClick={closeActiveModal}
+          onAddItem={onAddItem}
         />
         <ItemModal
           activeModal={activeModal}
