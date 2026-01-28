@@ -25,11 +25,29 @@
   margin: 0;
 }
 
+.modal__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .modal__weather {
   font-family: "Cabinet-Medium", sans-serif;
   font-size: 20px;
   line-height: 24px;
   margin: 0;
+}
+
+.modal__delete-btn {
+  padding: 0;
+  margin: 0;
+  font-family: "Cabinet-Medium", sans-serif;
+  font-size: 20px;
+  line-height: 24px;
+  border: none;
+  background-color: transparent;
+  color: #ff4d00;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 425px) {

@@ -1,0 +1,17 @@
+.sidebar__user {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.sidebar__user_name {
+  margin: 0;
+  font-family: "Cabinet-Medium", sans-serif;
+  line-height: 100%;
+  font-size: 20px;
+}
+
+.sidebar__user_avatar {
+  border: 1px #000000 50%;
+}

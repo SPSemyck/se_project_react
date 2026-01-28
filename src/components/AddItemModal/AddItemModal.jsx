@@ -5,10 +5,11 @@ import xIcon from "../../assets/closing-x-icon_grey.svg";
 const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
   const defaultValues = {
     name: "",
-    link: "",
+    imageUrl: "",
     weatherType: "",
   };
 
+  // Form hook
   const { values, handleChange } = useForm(defaultValues);
 
   function handleSubmit(evt) {
@@ -16,6 +17,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
     onAddItem(values);
   }
 
+  // HTML return
   return (
     <ModalWithForm
       title="New garment"
@@ -42,12 +44,12 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
           <label htmlFor="imageUrl" className="modal__label">
             Image{" "}
             <input
-              name="link"
+              name="imageUrl"
               type="url"
               id="imageUrl"
               placeholder="Image URL"
               className="modal__input"
-              value={values.link}
+              value={values.imageUrl}
               onChange={handleChange}
               required
             />

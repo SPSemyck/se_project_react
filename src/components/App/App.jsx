@@ -17,6 +17,7 @@ import {
   apiKey,
   defaultClothingItems,
 } from "../../utils/constants.js";
+import { addItem, getItems } from "../../utils/api.js";
 // Contexts
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 
@@ -28,11 +29,13 @@ function App() {
     condition: "",
     isDay: true,
   });
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  // States
+  const [clothingItems, setClothingItems] = useState([]);
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
+  // Functions
   const handleToggleSwitchChange = () => {
     setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
   };
@@ -40,6 +43,9 @@ function App() {
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
+
+  // TODO finish delete handler
+  const handleCardDelete = () => {};
 
   const closeActiveModal = () => {
     setActiveModal("");
@@ -53,12 +59,16 @@ function App() {
   const onAddItem = (inputValues) => {
     const newCardData = {
       name: inputValues.name,
-      link: inputValues.link,
+      imageUrl: inputValues.imageUrl,
       weather: inputValues.weatherType,
     };
 
-    setClothingItems([...clothingItems, newCardData]);
-    closeActiveModal();
+    addItem(newCardData)
+      .then((data) => {
+        setClothingItems([data, ...clothingItems]);
+        closeActiveModal();
+      })
+      .catch(console.error);
   };
 
   useEffect(() => {
@@ -68,10 +78,15 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
+
+    getItems()
+      .then((data) => {
+        setClothingItems(data.reverse());
+      })
+      .catch(console.error);
   }, []);
 
-  console.log({ currentTemperatureUnit });
-
+  // HTML return
   return (
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -92,7 +107,15 @@ function App() {
             />
           </Routes>
           <Routes>
-            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                />
+              }
+            />
           </Routes>
           <Footer />
         </div>
