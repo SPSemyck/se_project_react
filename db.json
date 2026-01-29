@@ -103,10 +103,10 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
     },
     {
-      "_id": 17
-    },
-    {
-      "_id": 18
+      "name": "beanie",
+      "imageUrl": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.livealifetodiefor.co.uk%2Fwp-content%2Fuploads%2F2023%2F10%2Fseashell-merino-wool-beanie-seashellr-rust-321176_2048x2048.jpg&f=1&nofb=1&ipt=95e7deed068f17a568502cd282c7a945cb0c92f5af85e8d25ee08f118b7e4d20",
+      "weather": "cold",
+      "_id": 21
     }
   ]
 }

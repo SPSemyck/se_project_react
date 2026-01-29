@@ -17,7 +17,7 @@ import {
   apiKey,
   defaultClothingItems,
 } from "../../utils/constants.js";
-import { addItem, getItems } from "../../utils/api.js";
+import { addItem, getItems, removeItem } from "../../utils/api.js";
 // Contexts
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 
@@ -45,7 +45,11 @@ function App() {
   };
 
   // TODO finish delete handler
-  const handleCardDelete = () => {};
+  const handleCardDelete = () => {
+    removeItem()
+      .then((data) => {})
+      .catch(console.error);
+  };
 
   const closeActiveModal = () => {
     setActiveModal("");
@@ -105,14 +109,13 @@ function App() {
                 />
               }
             />
-          </Routes>
-          <Routes>
             <Route
               path="/profile"
               element={
                 <Profile
                   handleCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  handleAddClick={handleAddClick}
                 />
               }
             />

@@ -1,10 +1,28 @@
 .clothes-section {
+  padding-left: 116px;
   flex-grow: 1;
 }
 
 .clothes-section__row {
   display: flex;
   flex-direction: row;
+  gap: 20px;
+}
+
+.clothes-section__description {
+  font-family: "Cabinet-Medium", sans-serif;
+  color: black;
+  line-height: 100%;
+  font-size: 20px;
+}
+
+.clothes-section__add-btn {
+  border: none;
+  background-color: transparent;
+  font-family: "Cabinet-Medium", sans-serif;
+  line-height: 100%;
+  font-size: 20px;
+  color: #00000099;
 }
 
 .clothes-section__list {
