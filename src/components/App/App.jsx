@@ -10,6 +10,7 @@ import Footer from "../Footer/Footer.jsx";
 import AddItemModal from "../AddItemModal/AddItemModal.jsx";
 import ItemModal from "../ItemModal/ItemModal.jsx";
 import Profile from "../Profile/Profile.jsx";
+import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 // Utils
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
 import {
@@ -49,6 +50,10 @@ function App() {
     removeItem()
       .then((data) => {})
       .catch(console.error);
+  };
+
+  const handleDeleteConfirmation = () => {
+    setActiveModal("delete");
   };
 
   const closeActiveModal = () => {
@@ -131,6 +136,11 @@ function App() {
           activeModal={activeModal}
           card={selectedCard}
           handleCloseClick={closeActiveModal}
+          handleDeleteConfirmation={handleDeleteConfirmation}
+        />
+        <ConfirmationModal
+          handleCloseClick={closeActiveModal}
+          activeModal={activeModal}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>

@@ -1,10 +1,13 @@
 import "./ItemModal.css";
 // Images
 import xIcon from "../../assets/closing-x-icon_white.svg";
-// Components
-import { confirmationModal } from "../ConfirmationModal/ConfirmationModal";
 
-function ItemModal({ activeModal, card, handleCloseClick }) {
+function ItemModal({
+  activeModal,
+  card,
+  handleCloseClick,
+  handleDeleteConfirmation,
+}) {
   return (
     <div className={`modal ${activeModal === "preview" && "modal_is-open"}`}>
       <div className="modal__content modal__content_type_image">
@@ -19,7 +22,11 @@ function ItemModal({ activeModal, card, handleCloseClick }) {
         <div className="modal__footer">
           <div className="modal__info">
             <h2 className="modal__caption">{card.name}</h2>
-            <button className="modal__delete-btn" type="button">
+            <button
+              onClick={handleDeleteConfirmation}
+              className="modal__delete-btn"
+              type="button"
+            >
               Delete item
             </button>
           </div>

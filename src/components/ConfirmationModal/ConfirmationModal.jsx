@@ -2,17 +2,15 @@ import "./ConfirmationModal.css";
 
 import xIcon from "../../assets/closing-x-icon_grey.svg";
 
-export const confirmationModal = ({ handleCloseClick }) => {
+const ConfirmationModal = ({ handleCloseClick, activeModal }) => {
   return (
-    <div className="modal">
-      <button>
-        <button
-          onClick={handleCloseClick}
-          type="button"
-          className="modal__close-btn"
-        >
-          <img src={xIcon} alt="Closing button" />
-        </button>
+    <div className={`modal ${activeModal === "delete" && "modal_is-open"}`}>
+      <button
+        onClick={handleCloseClick}
+        type="button"
+        className="modal__close-btn"
+      >
+        <img src={xIcon} alt="Closing button" />
       </button>
       <p className="modal__text">
         Are you sure you want to delete this item? This action is irreversible.
@@ -30,3 +28,5 @@ export const confirmationModal = ({ handleCloseClick }) => {
     </div>
   );
 };
+
+export default ConfirmationModal;
