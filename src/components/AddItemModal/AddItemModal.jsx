@@ -1,6 +1,5 @@
 import { useForm } from "../../hooks/useForm";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import xIcon from "../../assets/closing-x-icon_grey.svg";
 
 const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
   const defaultValues = {
@@ -10,7 +9,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
   };
 
   // Form hook
-  const { values, handleChange } = useForm(defaultValues);
+  const { values, handleChange, setValues } = useForm(defaultValues);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -68,6 +67,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
                   className="modal__radio-input"
                   value="hot"
                   onChange={handleChange}
+                  required
                 />{" "}
                 Hot
               </label>
@@ -82,6 +82,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
                   className="modal__radio-input"
                   value="warm"
                   onChange={handleChange}
+                  required
                 />{" "}
                 Warm
               </label>
@@ -96,6 +97,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
                   className="modal__radio-input"
                   value="cold"
                   onChange={handleChange}
+                  required
                 />{" "}
                 Cold
               </label>

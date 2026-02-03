@@ -22,7 +22,7 @@
   max-width: 496px;
   box-sizing: border-box;
   border-radius: 16px;
-  border: 1px #0000004d;
+  border: 1px solid #0000004d;
   width: 100%;
 }
 
@@ -59,7 +59,7 @@
   cursor: pointer;
 }
 
-.modal__label::placeholder {
+.modal__input::placeholder {
   color: #00000080;
 }
 

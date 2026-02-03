@@ -13,11 +13,7 @@ import Profile from "../Profile/Profile.jsx";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 // Utils
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
-import {
-  coordinates,
-  apiKey,
-  defaultClothingItems,
-} from "../../utils/constants.js";
+import { coordinates, apiKey } from "../../utils/constants.js";
 import { addItem, getItems, removeItem } from "../../utils/api.js";
 // Contexts
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
@@ -51,6 +47,7 @@ function App() {
           (item) => item._id !== selectedCard._id,
         );
         setClothingItems(cItems);
+        closeActiveModal();
       })
       .catch(console.error);
   };
