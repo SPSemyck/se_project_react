@@ -47,8 +47,14 @@ function App() {
 
   // TODO finish delete handler
   const handleCardDelete = () => {
-    removeItem()
-      .then((data) => {})
+    removeItem(selectedCard._id)
+      .then(() => {
+        const cItems = clothingItems.filter(
+          (item) => item._id !== selectedCard._id,
+        );
+        console.log(cItems, clothingItems);
+        setClothingItems(cItems);
+      })
       .catch(console.error);
   };
 
@@ -141,6 +147,8 @@ function App() {
         <ConfirmationModal
           handleCloseClick={closeActiveModal}
           activeModal={activeModal}
+          handleCardDelete={handleCardDelete}
+          closeActiveModal={closeActiveModal}
         />
       </div>
     </CurrentTemperatureUnitContext.Provider>
