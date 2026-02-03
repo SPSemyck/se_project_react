@@ -1,10 +1,8 @@
 # WTWR (What to wear) React.js/weather API project
 
-## This project (created by Sean Semyck) is the final project for TripleTen's software developer course Sprint 10, used to showcase an understanding for React.js.
+## This project (created by Sean Semyck) is the final project for TripleTen's software developer course Sprint 11, used to showcase an understanding for React.js and React Router.
 
-- The app uses .fetch to gather information from the OpenWeather API and return the most appropriate clothing options. It is comprised of most React/JSX to makeup most of the markup. The page is broken up into components ( found in assets ) as per React notation. Each component contains a JSX file and a corresponding CSS file.
-
-- The project demonstrates loose coupling of components by using App.JSX to pass most of the functional logic to the other components. This makes the other components more scalable and independent by avoiding "hard-coding" anything into the components themselves.
+- The app uses API calls to gather information from the OpenWeather API and a mock server to represent the functionality the user will experience upon completion. It is comprised of most React/JSX to makeup most of the markup. The page is broken up into loosely-coupled components ( found in assets ) and uses React Router to display different page routes.
 
 ### Things to improve:
 

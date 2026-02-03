@@ -44,15 +44,12 @@ function App() {
   const handleAddClick = () => {
     setActiveModal("add-garment");
   };
-
-  // TODO finish delete handler
   const handleCardDelete = () => {
     removeItem(selectedCard._id)
       .then(() => {
         const cItems = clothingItems.filter(
           (item) => item._id !== selectedCard._id,
         );
-        console.log(cItems, clothingItems);
         setClothingItems(cItems);
       })
       .catch(console.error);
