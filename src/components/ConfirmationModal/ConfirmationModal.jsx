@@ -6,7 +6,6 @@ const ConfirmationModal = ({
   handleCloseClick,
   activeModal,
   handleCardDelete,
-  closeActiveModal,
 }) => {
   function handleDelete(selectedCard) {
     handleCardDelete(selectedCard._id);

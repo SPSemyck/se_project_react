@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.card:hover {
+  cursor: pointer;
+}
+
 .card__name {
   font-family: "Cabinet-Medium", sans-serif;
   font-size: 16px;

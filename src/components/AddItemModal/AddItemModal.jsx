@@ -9,7 +9,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
   };
 
   // Form hook
-  const { values, handleChange, setValues } = useForm(defaultValues);
+  const { values, handleChange } = useForm(defaultValues);
 
   function handleSubmit(evt) {
     evt.preventDefault();

@@ -8,6 +8,9 @@
 
 - The main issue with the current state is the lack of responsive design. There is a need to scale the page for mobile use.
 
+- Link for video presentation:
+  https://drive.google.com/file/d/1Crit4872E751b-wgnMhk7tsolVVMJzkc/view?usp=drive_link
+
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
