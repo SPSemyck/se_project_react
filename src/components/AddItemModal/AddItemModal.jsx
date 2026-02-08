@@ -1,19 +1,28 @@
-import { useForm } from "../../hooks/useForm";
+import { useState } from "react";
+import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+
   const defaultValues = {
     name: "",
     imageUrl: "",
     weatherType: "",
   };
 
-  // Form hook
-  const { values, handleChange } = useForm(defaultValues);
+  // Form hook with validation
+  const { values, handleChange, errors, isFormValid, validateForm, resetForm } =
+    useFormWithValidation(defaultValues);
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    onAddItem(values);
+    setHasSubmitted(true);
+    if (validateForm(values)) {
+      onAddItem(values);
+      resetForm();
+      setHasSubmitted(false);
+    }
   }
 
   // HTML return
@@ -34,11 +43,15 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
               type="text"
               id="name"
               placeholder="Name"
-              className="modal__input"
+              className={`modal__input ${
+                hasSubmitted && errors.name ? "modal__input_is-invalid" : ""
+              }`}
               value={values.name}
               onChange={handleChange}
-              required
             />
+            {hasSubmitted && errors.name && (
+              <span className="modal__error">{errors.name}</span>
+            )}
           </label>
           <label htmlFor="imageUrl" className="modal__label">
             Image{" "}
@@ -47,11 +60,15 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
               type="url"
               id="imageUrl"
               placeholder="Image URL"
-              className="modal__input"
+              className={`modal__input ${
+                hasSubmitted && errors.imageUrl ? "modal__input_is-invalid" : ""
+              }`}
               value={values.imageUrl}
               onChange={handleChange}
-              required
             />
+            {hasSubmitted && errors.imageUrl && (
+              <span className="modal__error">{errors.imageUrl}</span>
+            )}
             <fieldset className="modal__radio-btns">
               <legend className="modal__legend">
                 Select the weather type:
@@ -67,7 +84,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
                   className="modal__radio-input"
                   value="hot"
                   onChange={handleChange}
-                  required
                 />{" "}
                 Hot
               </label>
@@ -82,7 +98,6 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
                   className="modal__radio-input"
                   value="warm"
                   onChange={handleChange}
-                  required
                 />{" "}
                 Warm
               </label>
@@ -97,11 +112,13 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
                   className="modal__radio-input"
                   value="cold"
                   onChange={handleChange}
-                  required
                 />{" "}
                 Cold
               </label>
             </fieldset>
+            {hasSubmitted && errors.weatherType && (
+              <span className="modal__error">{errors.weatherType}</span>
+            )}
           </label>
         </>
       }

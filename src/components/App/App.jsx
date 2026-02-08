@@ -13,8 +13,10 @@ import Profile from "../Profile/Profile.jsx";
 import ConfirmationModal from "../ConfirmationModal/ConfirmationModal.jsx";
 // Utils
 import { getWeather, filterWeatherData } from "../../utils/weatherApi.js";
-import { coordinates, apiKey } from "../../utils/constants.js";
+import { apiKey } from "../../utils/constants.js";
 import { addItem, getItems, removeItem } from "../../utils/api.js";
+// Hooks
+import { useGeolocation } from "../../hooks/useGeolocation.js";
 // Contexts
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext.jsx";
 
@@ -31,6 +33,9 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+
+  // Get user's current location
+  const { coordinates, isLoading, error: geoError } = useGeolocation();
 
   // Functions
   const handleToggleSwitchChange = () => {
@@ -81,6 +86,9 @@ function App() {
   };
 
   useEffect(() => {
+    // Only fetch weather when coordinates are loaded
+    if (isLoading) return;
+
     getWeather(coordinates, apiKey)
       .then((data) => {
         const filteredData = filterWeatherData(data);
@@ -93,7 +101,7 @@ function App() {
         setClothingItems(data.reverse());
       })
       .catch(console.error);
-  }, []);
+  }, [coordinates, isLoading]);
 
   // HTML return
   return (

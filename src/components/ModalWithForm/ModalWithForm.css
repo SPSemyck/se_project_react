@@ -73,6 +73,11 @@
   width: 100%;
 }
 
+.modal__input_is-invalid {
+  border-color: #ff0000;
+  color: #ff0000;
+}
+
 .modal__legend {
   padding: 24px 0 4px;
 }
@@ -105,6 +110,15 @@
 
 .modal__submit_btn:disabled {
   background-color: #0000004d;
+}
+
+.modal__error {
+  display: block;
+  color: #ff0000;
+  font-family: "Cabinet-Medium", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 4px;
 }
 
 @media screen and (max-width: 425px) {
